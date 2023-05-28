@@ -6,7 +6,7 @@ import styles from './CourseInput.module.css';
 const CourseInput = (props) => {
   const [enteredValue, setEnteredValue] = useState('');
   const [isValid, setIsValid] = useState(true);
-
+      
   const goalInputChangeHandler = (event) => {
     if (event.target.value.trim().length > 0) {
       setIsValid(true);
@@ -23,13 +23,12 @@ const CourseInput = (props) => {
     props.onAddGoal(enteredValue);
     setEnteredValue("");
     event.target.reset();
-
   };
 
   return (
     <form onSubmit={formSubmitHandler}>
       <div
-        className={`${styles['form-control']} ${!isValid && styles.invalid}`}
+        className={`${styles['form-control']} ${(!isValid || props.errorFlag) && styles.invalid}`}
       >
         <label>Course Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
