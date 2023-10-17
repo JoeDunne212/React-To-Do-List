@@ -8,7 +8,6 @@ const App = () => {
   const [courseGoals, setCourseGoals] = useState([{ text: 'Clean the backyard', id: 'g99'}, { text: 'Walk the dog', id: 'g98'}]);
   const [errorFlag, setErrorFlag] = useState(false);
     
-  console.log("Error flag at this stage is " + errorFlag);
   const addGoalHandler = async (enteredText) => {
     let atext = enteredText;
     let aid = Math.random().toString();
@@ -28,7 +27,7 @@ const App = () => {
       }
     })
     .catch(function (error) {
-      console.log(error + "big eror");
+      console.log(error);
       setErrorFlag(true);
     });
     

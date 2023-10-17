@@ -11,7 +11,7 @@ app.get("/api", (req, res) => {
 
 app.post("/api", (req, res) => {
     const data = req.body;
-    //Access and proces the data
+    //Access and process the data
     const text = data.text;
     
     // Assume there is an error before processing data
@@ -29,7 +29,6 @@ app.post("/api", (req, res) => {
     else{
         res.status(200).json({Message: "Valid data"});
     }
-   // res.send();
 });
 app.listen("5000", () => {console.log("Server listening on port 5000")});
 
